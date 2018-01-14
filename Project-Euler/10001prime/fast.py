@@ -1,3 +1,4 @@
+#Written by Gautam Manohar
 from math import log
 
 n = 10001
