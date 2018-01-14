@@ -1,16 +1,19 @@
-import math
-def isprime(n):
-	for i in range(2,int(math.sqrt(n)+1)):
-		if n%i == 0:
-			return False
-	return True
-primes = []
-num =1	
-while True:
-	num +=1
-	if isprime(num):
-		primes.append(num)
-	if len(primes) == 10001:
-		print(primes[10000])
-		break
+from math import log
 
+n = 10001
+
+def primes(n):
+	primes = []
+	sieve = [True] * (n + 1)
+	for p in range(2, n + 1):
+		if sieve[p]:
+			primes.append(p)
+			for i in range(p * p, n + 1, p):
+				sieve[i] = False
+	return primes
+
+def nth_prime(n):
+	max = int(n*(log(n) + log(log(n))))
+	return(primes(max)[n+2])
+
+print(nth_prime(10001))
