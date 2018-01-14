@@ -37,4 +37,5 @@ def find_ham(n):
 		if hamilton(G,n,p) != None:
 			return(hamilton(G,n,p))
 
-print(find_ham(15))
+for i in range(1,51):
+	print(i,find_ham(i))
