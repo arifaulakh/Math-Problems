@@ -34,6 +34,7 @@ def hamilton(G, size, pt, path=None):
 def find_ham(n):
 	G = gengraph(n)
 	for p in G:
-		return(hamilton(G,n,p))
+		if hamilton(G,n,p) == None:
+			return(hamilton(G,n,p))
 
 print(find_ham(15))
