@@ -1,7 +1,7 @@
-#Written by Gautam Manohar
+# Written by Gautam Manohar
 from math import log
 
-n = 10001
+N = 10001
 
 def primes(n):
 	primes = []
@@ -14,7 +14,7 @@ def primes(n):
 	return primes
 
 def nth_prime(n):
-	max = int(n*(log(n) + log(log(n))))
-	return(primes(max)[n+2])
+	p_max = int(n*(log(n) + log(log(n))))
+	return(primes(p_max)[n-1])
 
 print(nth_prime(10001))
